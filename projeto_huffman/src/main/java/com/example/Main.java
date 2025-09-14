@@ -6,7 +6,6 @@ public class Main {
         LocalRead leitor = new LocalRead();
 
         // System.out.println(">>> Iniciando o teste da classe LocalRead...");
-
         leitor.Leitor();
 
         // System.out.println(">>> Teste finalizado.");
