@@ -5,9 +5,9 @@ public class Main {
         System.out.println("\033\143");
         LocalRead leitor = new LocalRead();
 
-        // System.out.println(">>> Iniciando o teste da classe LocalRead...");
+        System.out.println(">>> Iniciando o teste da classe LocalRead...");
         leitor.Leitor();
 
-        // System.out.println(">>> Teste finalizado.");
+        System.out.println(">>> Teste finalizado.");
     }
 }

@@ -14,28 +14,30 @@ public class LocalRead {
         try (FileReader ler = new FileReader(decodificar)) {
             Contador(ler);
 
-            /*
-             * System.out.println("\n--- Tabela de Frequência de Caracteres ---");
-             * for (Map.Entry<Character, Integer> entrada : mapa.entrySet()) {
-             * char caractere = entrada.getKey();
-             * int frequencia = entrada.getValue();
-             * if (caractere == '\n') {
-             * System.out.println("Caractere: '\\n' (Quebra de Linha) | Frequência: " +
-             * frequencia);
-             * } else if (caractere == ' ') {
-             * System.out.println("Caractere: ' ' (Espaço) | Frequência: " + frequencia);
-             * } else if (caractere == '\r') {
-             * System.out.println("Caractere: '\\r' (Quebra de Linha) | Frequência: " +
-             * frequencia);
-             * 
-             * } else {
-             * System.out.println("Caractere: '" + caractere + "' | Frequência: " +
-             * frequencia);
-             * }
-             * }
-             * System.out.println("-----------------------------------------\n");
-             */
+            System.out.println("\n--- Tabela de Frequência de Caracteres ---");
+            java.util.List<Map.Entry<Character, Integer>> listaOrdenada = new java.util.ArrayList<>(mapa.entrySet());
 
+            listaOrdenada.sort(Map.Entry.comparingByValue());
+
+            for (Map.Entry<Character, Integer> entrada : listaOrdenada) {
+                char caractere = entrada.getKey();
+                int frequencia = entrada.getValue();
+
+                if (caractere == '\n') {
+                    System.out.println("Caractere: '\\n' (Quebra de Linha) | Frequência: " +
+                            frequencia);
+                } else if (caractere == ' ') {
+                    System.out.println("Caractere: ' ' (Espaço) | Frequência: " + frequencia);
+                } else if (caractere == '\r') {
+                    System.out.println("Caractere: '\\r' (Quebra de Linha) | Frequência: " +
+                            frequencia);
+
+                } else {
+                    System.out.println("Caractere: '" + caractere + "' | Frequência: " +
+                            frequencia);
+                }
+            }
+            System.out.println("-----------------------------------------\n");
         } catch (Exception e) {
             System.out.println("log de erro: ");
             e.printStackTrace();
@@ -60,32 +62,4 @@ public class LocalRead {
 
         Contador(ler);
     }
-
-    /*
-     * Rascunhos:
-     * public void Leitor() {
-     * try (FileReader ler = new FileReader(decodificar)) {
-     * int linha;
-     * 
-     * while ((linha = ler.read()) != -1) {
-     * char caractere = (char) linha;
-     * 
-     * Contador(caractere);
-     * }
-     * } catch (Exception e) {
-     * e.printStackTrace();
-     * }
-     * }
-     * 
-     * public void Contador(char caractere) {
-     * if (mapa.containsKey(caractere)) {
-     * mapa.get(caractere);
-     * caractere++;
-     * Leitor();
-     * } else {
-     * mapa.put(caractere, 1);
-     * Leitor();
-     * }
-     * }
-     */
 }
