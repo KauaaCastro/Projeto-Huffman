@@ -30,4 +30,12 @@ public class Node {
         return caractere;
     }
 
+    public Node getFilhoEsq() {
+        return filhoEsq;
+    }
+
+    public Node getFilhoDir() {
+        return filhoDir;
+    }
+
 }

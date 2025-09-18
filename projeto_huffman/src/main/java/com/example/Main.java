@@ -9,5 +9,14 @@ public class Main {
         leitor.Leitor();
 
         System.out.println(">>> Teste finalizado.");
+
+        if (!leitor.mapa.isEmpty()) {
+            System.out.println("\n>>> Construindo a árvore de Huffman...");
+            Btree arvoreHuffman = new Btree(leitor.mapa);
+            System.out.println(">>> Árvore construída com sucesso!");
+
+            // ADICIONE ESTA LINHA PARA EXIBIR A ÁRVORE:
+            arvoreHuffman.exibirArvore();
+        }
     }
 }
