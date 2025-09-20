@@ -1,3 +1,4 @@
+// No seu arquivo Main.java
 package com.example;
 
 public class Main {
@@ -15,8 +16,10 @@ public class Main {
             Btree arvoreHuffman = new Btree(leitor.mapa);
             System.out.println(">>> Árvore construída com sucesso!");
 
-            // ADICIONE ESTA LINHA PARA EXIBIR A ÁRVORE:
             arvoreHuffman.exibirArvore();
+            arvoreHuffman.GerarCodigo();
+            arvoreHuffman.ComprimirArquivo();
+            arvoreHuffman.CallCompressaoBit();
         }
     }
 }
