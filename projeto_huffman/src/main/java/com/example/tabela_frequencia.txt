@@ -1,0 +1,65 @@
+--- Tabela de Frequência de Caracteres ---
+Caractere: '3' | Frequência: 1
+Caractere: '5' | Frequência: 1
+Caractere: '9' | Frequência: 1
+Caractere: ';' | Frequência: 1
+Caractere: '?' | Frequência: 1
+Caractere: 'B' | Frequência: 1
+Caractere: 'J' | Frequência: 1
+Caractere: 'N' | Frequência: 1
+Caractere: 'R' | Frequência: 1
+Caractere: 'V' | Frequência: 1
+Caractere: 'M' | Frequência: 2
+Caractere: 'Z' | Frequência: 2
+Caractere: 'j' | Frequência: 2
+Caractere: '(' | Frequência: 3
+Caractere: ')' | Frequência: 3
+Caractere: '1' | Frequência: 3
+Caractere: '2' | Frequência: 3
+Caractere: 'G' | Frequência: 3
+Caractere: 'L' | Frequência: 3
+Caractere: ''' | Frequência: 4
+Caractere: 'S' | Frequência: 4
+Caractere: 'F' | Frequência: 5
+Caractere: 'P' | Frequência: 5
+Caractere: '"' | Frequência: 6
+Caractere: 'C' | Frequência: 6
+Caractere: 'D' | Frequência: 6
+Caractere: 'E' | Frequência: 6
+Caractere: 'A' | Frequência: 7
+Caractere: 'z' | Frequência: 7
+Caractere: '-' | Frequência: 9
+Caractere: 'q' | Frequência: 9
+Caractere: 'k' | Frequência: 11
+Caractere: 'x' | Frequência: 11
+Caractere: ':' | Frequência: 12
+Caractere: 'H' | Frequência: 12
+Caractere: 'I' | Frequência: 16
+Caractere: '\n' (Quebra de Linha) | Frequência: 20
+Caractere: '\r' (Retorno de Carro) | Frequência: 20
+Caractere: 'T' | Frequência: 21
+Caractere: 'v' | Frequência: 23
+Caractere: 'w' | Frequência: 30
+Caractere: '.' | Frequência: 33
+Caractere: ',' | Frequência: 42
+Caractere: 'b' | Frequência: 46
+Caractere: 'y' | Frequência: 60
+Caractere: 'p' | Frequência: 77
+Caractere: 'g' | Frequência: 82
+Caractere: 'f' | Frequência: 98
+Caractere: 'u' | Frequência: 110
+Caractere: 'd' | Frequência: 118
+Caractere: 'm' | Frequência: 131
+Caractere: 'h' | Frequência: 137
+Caractere: 'l' | Frequência: 149
+Caractere: 'c' | Frequência: 152
+Caractere: 'r' | Frequência: 190
+Caractere: 's' | Frequência: 229
+Caractere: 'i' | Frequência: 258
+Caractere: 'o' | Frequência: 261
+Caractere: 'n' | Frequência: 265
+Caractere: 't' | Frequência: 312
+Caractere: 'a' | Frequência: 315
+Caractere: 'e' | Frequência: 400
+Caractere: ' ' (Espaço) | Frequência: 653
+-----------------------------------------

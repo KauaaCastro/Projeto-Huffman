@@ -17,8 +17,15 @@ public class Btree {
     private String arquivoOriginal = "projeto_huffman/src/main/java/com/example/Huffman_Coding.txt";
     private String arquivoBinario = "projeto_huffman/src/main/java/com/example/Huffman_Binario.chf";
     private Map<Character, String> mapaDeCodigos = new HashMap<>();
+    private Map<Character, Integer> salvarFrequencia;
 
     public Btree(Map<Character, Integer> mapaFrequencia) {
+        this.salvarFrequencia = mapaFrequencia;
+        if (mapaFrequencia == null || mapaFrequencia.isEmpty()) {
+            this.raiz = null;
+            return;
+        }
+
         Comparator<Node> comparadorFrequencia = Comparator.comparingInt(Node::getFrequencia);
         Queue<Node> listaPrioritaria = new PriorityQueue<>(comparadorFrequencia);
 
@@ -162,24 +169,17 @@ public class Btree {
     }
 
     private void exibirNo(Node no, String prefixo) {
-        // 1. Condição de Parada (Caso Base): Se o nó é nulo, chegamos ao fim de um
-        // galho.
         if (no == null) {
             return;
         }
 
-        // 2. Verifica se o nó atual é uma folha.
-        // Uma folha é um nó que não tem filhos.
         boolean isFolha = (no.getFilhoEsq() == null && no.getFilhoDir() == null);
 
-        // 3. Imprime a informação do nó atual
         System.out.print(prefixo);
         System.out.print(isFolha ? "└── Folha" : "├── Nó Interno");
 
         System.out.print(" [freq: " + no.getFrequencia());
-        // Se for uma folha, imprime também o caractere.
         if (isFolha) {
-            // Usamos um switch para imprimir caracteres especiais de forma legível
             switch (no.getCaractere()) {
                 case '\n':
                     System.out.print(", char: '\\n'");
@@ -196,11 +196,6 @@ public class Btree {
             }
         }
         System.out.println("]");
-
-        // 4. Chamadas Recursivas para os filhos (a mágica do desenho)
-        // Aumentamos o prefixo para os filhos para criar o efeito de "galhos".
-        // O uso de "│ " (para o filho da esquerda) e " " (para o da direita)
-        // cria as linhas de conexão da árvore.
         exibirNo(no.getFilhoEsq(), prefixo + "│   ");
         exibirNo(no.getFilhoDir(), prefixo + "    ");
     }

@@ -2,6 +2,8 @@ package com.example;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,30 +16,47 @@ public class LocalRead {
         try (FileReader ler = new FileReader(decodificar)) {
             Contador(ler);
 
-            System.out.println("\n--- Tabela de Frequência de Caracteres ---");
-            java.util.List<Map.Entry<Character, Integer>> listaOrdenada = new java.util.ArrayList<>(mapa.entrySet());
+            String caminhoArquivoTabela = "projeto_huffman/src/main/java/com/example/tabela_frequencia.txt";
+            System.out.println("\nSalvando a tabela de frequência formatada em: " + caminhoArquivoTabela);
 
-            listaOrdenada.sort(Map.Entry.comparingByValue());
+            try (FileWriter escritor = new FileWriter(caminhoArquivoTabela)) {
 
-            for (Map.Entry<Character, Integer> entrada : listaOrdenada) {
-                char caractere = entrada.getKey();
-                int frequencia = entrada.getValue();
+                escritor.write("--- Tabela de Frequência de Caracteres ---\n");
 
-                if (caractere == '\n') {
-                    System.out.println("Caractere: '\\n' (Quebra de Linha) | Frequência: " +
-                            frequencia);
-                } else if (caractere == ' ') {
-                    System.out.println("Caractere: ' ' (Espaço) | Frequência: " + frequencia);
-                } else if (caractere == '\r') {
-                    System.out.println("Caractere: '\\r' (Quebra de Linha) | Frequência: " +
-                            frequencia);
+                java.util.List<Map.Entry<Character, Integer>> listaOrdenada = new java.util.ArrayList<>(
+                        mapa.entrySet());
+                listaOrdenada.sort(Map.Entry.comparingByValue());
 
-                } else {
-                    System.out.println("Caractere: '" + caractere + "' | Frequência: " +
-                            frequencia);
+                for (Map.Entry<Character, Integer> entrada : listaOrdenada) {
+                    char caractere = entrada.getKey();
+                    int frequencia = entrada.getValue();
+                    String linhaParaEscrever;
+
+                    if (caractere == '\n') {
+                        linhaParaEscrever = "Caractere: '\\n' (Quebra de Linha) | Frequência: " + frequencia;
+
+                    } else if (caractere == ' ') {
+                        linhaParaEscrever = "Caractere: ' ' (Espaço) | Frequência: " + frequencia;
+
+                    } else if (caractere == '\r') {
+                        linhaParaEscrever = "Caractere: '\\r' (Retorno de Carro) | Frequência: " + frequencia;
+
+                    } else {
+                        linhaParaEscrever = "Caractere: '" + caractere + "' | Frequência: " + frequencia;
+
+                    }
+
+                    escritor.write(linhaParaEscrever + "\n");
                 }
+
+                escritor.write("-----------------------------------------\n");
+                System.out.println("Tabela de frequência salva com sucesso.");
+
+            } catch (IOException e) {
+                System.out.println("Ocorreu um erro ao salvar o arquivo da tabela.");
+                e.printStackTrace();
             }
-            System.out.println("-----------------------------------------\n");
+
         } catch (Exception e) {
             System.out.println("log de erro: ");
             e.printStackTrace();
