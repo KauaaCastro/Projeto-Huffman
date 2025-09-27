@@ -1,8 +1,9 @@
-// No seu arquivo Main.java
 package com.example;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("\033\143");
         LocalRead leitor = new LocalRead();
 
@@ -11,15 +12,15 @@ public class Main {
 
         System.out.println(">>> Teste finalizado.");
 
-        if (!leitor.mapa.isEmpty()) {
+        if (leitor.mapa != null && !leitor.mapa.isEmpty()) {
             System.out.println("\n>>> Construindo a árvore de Huffman...");
             Btree arvoreHuffman = new Btree(leitor.mapa);
             System.out.println(">>> Árvore construída com sucesso!");
 
-            arvoreHuffman.exibirArvore();
-            arvoreHuffman.GerarCodigo();
-            arvoreHuffman.ComprimirArquivo();
-            arvoreHuffman.CallCompressaoBit();
+            String arquivoOriginal = leitor.getArquivoOriginalPath();
+            String arquivoDestino = "projeto_huffman/src/main/java/com/example/arquivo_comprimido.hfmc";
+
+            arvoreHuffman.comprimir(arquivoOriginal, arquivoDestino);
         }
     }
 }

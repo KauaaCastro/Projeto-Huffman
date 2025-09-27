@@ -12,6 +12,10 @@ public class LocalRead {
     File decodificar = new File(arquivo);
     Map<Character, Integer> mapa = new HashMap<>();
 
+    public String getArquivoOriginalPath() {
+        return this.arquivo;
+    }
+
     public void Leitor() {
         try (FileReader ler = new FileReader(decodificar)) {
             Contador(ler);
