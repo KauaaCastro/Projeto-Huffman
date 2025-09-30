@@ -18,7 +18,7 @@ public class Main {
             System.out.println(">>> Árvore construída com sucesso!");
 
             String arquivoOriginal = leitor.getArquivoOriginalPath();
-            String arquivoDestino = "projeto_huffman/src/main/java/com/example/arquivo_comprimido.hfmc";
+            String arquivoDestino = "projeto_huffman/src/main/java/com/example/arquivo_codificado.chf";
 
             arvoreHuffman.comprimir(arquivoOriginal, arquivoDestino);
         }
